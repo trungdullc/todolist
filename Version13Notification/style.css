@@ -1,0 +1,315 @@
+/* ---- Background with floating clouds ---- */
+body {
+    background: linear-gradient(135deg, #ffd9ec, #ffb7d7, #ffd9ec);
+    background-size: 300% 300%;
+    animation: skyFloat 12s ease infinite;
+    font-family: "Nunito", sans-serif;
+    cursor: url('../images/cursor.gif'), auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Smooth waving gradient sky */
+@keyframes skyFloat {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating cloud images */
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    background-image: url("../images/cloud.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.25;
+    animation: floatClouds 30s linear infinite;
+}
+
+body::after {
+    animation-duration: 45s;
+    opacity: 0.18;
+    transform: scale(1.3);
+}
+
+@keyframes floatClouds {
+    0% { transform: translateX(-40vw) translateY(-10vh); }
+    50% { transform: translateX(40vw) translateY(5vh); }
+    100% { transform: translateX(-40vw) translateY(-10vh); }
+}
+
+/* ---- App Container ---- */
+.container {
+    background: #fff6fb;
+    padding: 40px;
+    border-radius: 30px;
+    width: 390px;
+    border: 4px solid #ffb5d4;
+    box-shadow: 0px 0px 30px rgba(255, 150, 190, 0.35);
+    position: relative;
+    z-index: 10;
+}
+
+/* Hello Kitty Bow on Title */
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+}
+
+.title::after {
+    content: "🎀";
+    position: absolute;
+    top: -20px;
+    font-size: 28px;
+}
+
+.icon {
+    width: 45px;
+    height: 45px;
+}
+
+h1 {
+    color: #ff6faf;
+    font-size: 27px;
+    margin: 0;
+    font-weight: 800;
+}
+
+/* Inputs */
+.input-box {
+    display: flex;
+    margin-top: 20px;
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border-radius: 15px;
+    border: 2px solid #ffb9dc;
+    background: #fff0f8;
+    font-size: 16px;
+    outline: none;
+}
+
+input::placeholder {
+    color: #d88ab2;
+}
+
+button {
+    margin-left: 10px;
+    padding: 12px 20px;
+    background: #ff8ec7;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.25s;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #ff75bc;
+    transform: scale(1.08);
+}
+
+/* Tasks */
+ul {
+    margin-top: 25px;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    background: #ffe3f3;
+    padding: 14px;
+    margin-top: 12px;
+    border-radius: 18px;
+    border: 2px solid #ffb3d8;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+    position: relative;
+}
+
+li:hover {
+    transform: scale(1.04);
+}
+
+/* Cute strawberry icon bullet */
+li::before {
+    content: "🍓";
+    font-size: 18px;
+}
+
+li span {
+    flex: 1;
+    cursor: pointer;
+    color: #c44d92;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+/* Completed state */
+li.completed span {
+    text-decoration: line-through;
+    opacity: 0.45;
+}
+
+/* Delete Button */
+.delete {
+    background: #ff7aa7;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.delete:hover {
+    background: #ff5d91;
+    transform: scale(1.1);
+}
+
+/* ---- Hello Kitty Waving Mascot ---- */
+.kitty {
+    position: fixed;
+    bottom: 12px;
+    right: 12px;
+    width: 120px;
+    animation: kittyFloat 3.5s ease-in-out infinite;
+    pointer-events: none; /* prevents blocking clicks */
+}
+
+/* Cute gentle floating animation */
+@keyframes kittyFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ---- Floating Sparkles Around Hello Kitty ---- */
+.sparkle {
+    position: fixed;
+    font-size: 22px;
+    color: #ffd6f5;
+    opacity: 0;
+    animation: sparkleTwinkle 2.5s infinite ease-in-out;
+    pointer-events: none;
+}
+
+/* Each sparkle is positioned around kitty */
+.sparkle1 { bottom: 140px; right: 50px; animation-delay: 0s; }
+.sparkle2 { bottom: 100px; right: 140px; animation-delay: 0.5s; }
+.sparkle3 { bottom: 60px; right: 95px; animation-delay: 1s; }
+.sparkle4 { bottom: 150px; right: 110px; animation-delay: 1.6s; }
+
+/* Twinkle effect */
+@keyframes sparkleTwinkle {
+    0%   { opacity: 0; transform: scale(0.6) translateY(0px); }
+    50%  { opacity: 1; transform: scale(1.1) translateY(-6px); }
+    100% { opacity: 0; transform: scale(0.6) translateY(0px); }
+}
+
+/* Floating Sparkles Animation */
+.floating-sparkles {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.spark {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #fff6f9 0%, #ffb7d9 60%, rgba(255,255,255,0) 100%);
+  border-radius: 50%;
+  opacity: 0.9;
+  animation: floaty 8s linear infinite;
+}
+
+/* Different sparkle sizes */
+.spark:nth-child(2) { width: 8px; height: 8px; animation-duration: 10s; }
+.spark:nth-child(3) { width: 14px; height: 14px; animation-duration: 12s; }
+.spark:nth-child(4) { width: 10px; height: 10px; animation-duration: 9s; }
+.spark:nth-child(5) { width: 16px; height: 16px; animation-duration: 14s; }
+.spark:nth-child(6) { width: 6px; height: 6px; animation-duration: 11s; }
+
+/* Drift animation */
+@keyframes floaty {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(50vh) translateX(30px);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(-30px);
+    opacity: 0;
+  }
+}
+
+/* Hearts that follow the mouse */
+.heart {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    color: #ff77b1;
+    pointer-events: none;
+    animation: floatUp 1.5s ease-out forwards;
+    z-index: 999;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-50px) scale(1.3); opacity: 0; }
+}
+
+/* Added Kawaii notification */
+.notification {
+	position: fixed;                                 	/* Keep the notification in a fixed screen position */
+	top: 20px;                                        	/* Position it 20px from the top of the screen */
+	right: 20px;                                      	/* Position it 20px from the right side of the screen */
+	background: linear-gradient(135deg, #ffe1f0, #ffd1e8); 	/* Soft pink gradient background */
+	color: #ff4da6;                                   	/* Text color (pink) */
+	padding: 10px 18px;                               	/* Inner spacing around text */
+	border-radius: 20px;                              	/* Rounded corners for cute bubble look */
+	font-weight: 600;                                 	/* Slightly bold text */
+	box-shadow: 0 4px 10px rgba(255, 0, 150, 0.2);     	/* Soft pink shadow for depth */
+	opacity: 0;                                       	/* Start invisible before animation */
+	transform: translateY(-20px);                     	/* Start slightly shifted upward */
+	animation: slideFade 1s forwards;                 	/* Run slideFade animation once, keep final state */
+	z-index: 1000;                                    	/* Ensure notification shows above other elements */
+	pointer-events: none;                             	/* Prevent blocking clicks behind the notification */
+}
+
+/* Animation that fades and slides notification in, then out */
+@keyframes slideFade {
+	0%   { opacity: 0; transform: translateY(-20px); } 	/* Start invisible and above */
+	20%  { opacity: 1; transform: translateY(0); }     	/* Fade in & slide into place */
+	80%  { opacity: 1; transform: translateY(0); }     	/* Stay visible briefly */
+	100% { opacity: 0; transform: translateY(-20px); } 	/* Fade out and slide up again */
+}
