@@ -1,0 +1,125 @@
+/* Body styles */
+body {
+    background: #ffeef8; 							/* Light pink background for the whole page */
+    font-family: "Poppins", sans-serif; 			/* Sets the font */
+    display: flex; 									/* Enables flex layout for centering content */
+    align-items: center; 							/* Vertically centers the container */
+    justify-content: center; 						/* Horizontally centers the container */
+    height: 100vh; 									/* Makes body take full viewport height */
+    margin: 0; 										/* Removes default margin */
+    color: #555; 									/* Default text color */
+}
+
+/* Container styles */
+.container {
+    background: #fff7fd; 							/* Light background for the box */
+    padding: 35px; 									/* Inner spacing inside the container */
+    border-radius: 20px; 							/* Rounded corners */
+    width: 350px; 									/* Fixed width of the container */
+    box-shadow: 0px 15px 35px rgba(0,0,0,0.1); 		/* Soft shadow under the container */
+    border: 3px solid #ffd7ef; 						/* Pink border around the container */
+}
+
+/* Heading styles */
+h1 {
+    text-align: center; 							/* Center aligns the text */
+    color: #ff8cc6; 								/* Pink color for heading */
+    margin-bottom: 20px; 							/* Space below the heading */
+    font-weight: 700; 								/* Bold font weight */
+    letter-spacing: 1px; 							/* Space between letters */
+}
+
+/* Input box container */
+.input-box {
+    display: flex; 									/* Aligns input and button side by side */
+}
+
+/* Input field styles */
+input {
+    flex: 1; 										/* Makes input take all remaining space in flex container */
+    padding: 12px; 									/* Inner spacing for text */
+    border: 2px solid #ffd1ec; 						/* Pink border */
+    border-radius: 12px; 							/* Rounded corners */
+    outline: none; 									/* Removes default focus outline */
+    font-size: 16px; 								/* Text size */
+    background: #fff0fa; 							/* Light pink background for input */
+}
+
+/* Placeholder text color */
+input::placeholder {
+    color: #d999c8; 								/* Faded pink placeholder text */
+}
+
+/* Button styles */
+button {
+    margin-left: 10px; 								/* Space between input and button */
+    padding: 12px 18px; 							/* Inner spacing for button */
+    background: #ff9ed9; 							/* Pink background */
+    border: none; 									/* Removes default button border */
+    border-radius: 12px; 							/* Rounded corners */
+    color: white; 									/* Text color */
+    cursor: pointer; 								/* Cursor changes to pointer on hover */
+    font-weight: 600; 								/* Semi-bold text */
+    transition: 0.2s; 								/* Smooth transition for hover effects */
+}
+
+/* Button hover effect */
+button:hover {
+    background: #ff7cc7; 							/* Darker pink on hover */
+}
+
+/* Unordered list styles */
+ul {
+    margin-top: 20px; 								/* Space above the list */
+    padding: 0; 									/* Remove default padding */
+}
+
+/* List item styles */
+li {
+    list-style: none; 								/* Remove default bullets */
+    background: #ffe6f4; 							/* Light pink background */
+    padding: 12px; 									/* Inner spacing */
+    margin-top: 12px; 								/* Space between items */
+    border-radius: 15px; 							/* Rounded corners */
+    border: 2px solid #ffd0eb; 						/* Pink border */
+    display: flex; 									/* Flex layout for content alignment */
+    justify-content: space-between; 				/* Space between text and buttons */
+    align-items: center; 							/* Center items vertically */
+    transition: 0.2s; 								/* Smooth hover effect */
+}
+
+/* List item hover effect */
+li:hover {
+    transform: scale(1.03); 						/* Slightly enlarges the item */
+}
+
+/* Span inside list item */
+li span {
+    flex: 1; 										/* Takes up all available space */
+    cursor: pointer; 								/* Pointer cursor for clickable text */
+    color: #d064ac; 								/* Purple-pink text color */
+    font-weight: 500; 								/* Medium weight */
+}
+
+/* Completed list item */
+li.completed span {
+    text-decoration: line-through; 					/* Strike-through text */
+    opacity: 0.5; 									/* Fade text */
+}
+
+/* Delete button inside list item */
+.delete {
+    background: #ff7ca8; 							/* Pink background for delete button */
+    border: none; 									/* Remove border */
+    padding: 7px 12px; 								/* Inner spacing */
+    border-radius: 10px; 							/* Rounded corners */
+    cursor: pointer; 								/* Pointer cursor */
+    font-weight: bold; 								/* Bold text */
+    color: white; 									/* White text */
+    transition: 0.2s; 								/* Smooth hover effect */
+}
+
+/* Delete button hover */
+.delete:hover {
+    background: #ff5c8d; 							/* Darker pink on hover */
+}
